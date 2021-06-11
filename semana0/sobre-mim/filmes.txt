@@ -1,3 +1,4 @@
+
 lucifer
 mr.robot
 sete pecados capitais
@@ -5,3 +6,8 @@ naruto
 demon slayer
 marvel (todos)
 exterminador do futuro
+=======
+lucifer 
+naruto
+sete pecados capitais
+mr.robot
