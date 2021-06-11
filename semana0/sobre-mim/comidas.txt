@@ -1,6 +1,16 @@
+
+arroz
+feijao
+churrasco
+pizza
+comida da vovó
+macarrão
+tomate
+
 feijão
 arroz
 carne
 macarrão
 pizza
 lazanha
+
