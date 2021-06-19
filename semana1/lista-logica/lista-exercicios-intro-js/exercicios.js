@@ -155,7 +155,7 @@ function checaAnoBissexto(ano) {
 // EXERCÍCIO 15
 function checaValidadeInscricaoLabenu() {
   const cond1 = prompt("você tem mais de 18 anos ?")
-  const cond2 = prompt("você possui ensino médio completo?")
+  const cond2 = prompt("você possui ensinoo médio completo?")
   const cond3 = prompt("você possui disponibilidade para estudar o dia todo?")
   console.log(cond1 === "sim" && cond2 === "sim" && cond3 === "sim")
 }
