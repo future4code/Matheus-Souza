@@ -13,8 +13,6 @@ function retornaNumerosParesElevadosADois(array) {
   for (num of array) {
     if (num % 2 === 0) {
       dobro.push(num * num)
-      console.log(num * num)
-      console.log(dobro)
     }
   }
   return dobro
@@ -28,27 +26,25 @@ function retornaNumerosPares(array) {
   for (num of array)
     if (num % 2 === 0) {
       pares.push(num)
-      console.log(pares)
     }
   return pares
 }
 
 // EXERCÍCIO 04
 function retornaMaiorNumero(array) {
-  maior = 0
+  let maiorNumero = array[0]
   for (num of array) {
-    if (num < maior) {
-      num = maior
+    if (maiorNumero < num) {
+      maiorNumero = num
     }
   }
-  return maior
+  return maiorNumero
 }
+
 
 // EXERCÍCIO 05
 function retornaQuantidadeElementos(array) {
-  for (num of array) {
-    console.log(num)
-  }
+  return array.length
 }
 
 // EXERCÍCIO 06
@@ -67,7 +63,13 @@ function retornaExpressoesBooleanas() {
 
 // EXERCÍCIO 07
 function retornaNNumerosPares(n) {
-  pares = n % 2 === 0
+  const novoArray = []
+  for (let i = 0; novoArray.length < n; i++) {
+    if (i % 2 == 0) {
+      novoArray.push(i)
+    }
+  }
+  return novoArray
 }
 
 // EXERCÍCIO 08
@@ -84,48 +86,79 @@ function checaTriangulo(a, b, c) {
 
 // EXERCÍCIO 09
 function comparaDoisNumeros(num1, num2) {
-  if (num1 > num2) {
-    MaiorNumero = num1
-    console.log("maior é ", MaiorNumero)
 
-  } else if (num2 > num1) {
-    MaiorNumero = num2
-    console.log("maior é ", MaiorNumero)
+  let maiorNumero
+  let menorNumero
+  let maiorDivisivelPorMenor
+
+  if (num1 > num2) {
+
+    maiorNumero = num1
+    menorNumero = num2
+
+  } else {
+
+    maiorNumero = num2
+    menorNumero = num1
+
   }
-  // Formato do objeto a ser retornado:
-  // {
-  //   maiorNumero: X,
-  //   maiorDivisivelPorMenor: Y,
-  //   diferenca: Z
-  // }
+
+  maiorDivisivelPorMenor = maiorNumero % menorNumero === 0
+
+  const diferenca = maiorNumero - menorNumero
+
+  return {
+    maiorNumero: maiorNumero,
+    maiorDivisivelPorMenor: maiorDivisivelPorMenor,
+    diferenca: diferenca,
+  }
+
 }
 
 // EXERCÍCIO 10
 function segundoMaiorEMenor(array) {
-  novoArray = []
-  segundoMaior
-  segundoMenor
-  for (num of array) {
+  let menor = Infinity
+  let maior = - Infinity
+  let segundoMenor = Infinity
+  let segundoMaior = - Infinity
+  let novoArray = []
 
+  for (num of array) {
+    if (num < menor) {
+      menor = num
+    }
+    if (num > maior) {
+      maior = num
+    }
   }
+
+  for (num of array) {
+    if (num < segundoMenor && num !== menor) {
+      segundoMenor = num
+    }
+    if (num > segundoMaior && num !== maior) {
+      segundoMaior = num
+    }
+  }
+  novoArray.push(segundoMaior)
+  novoArray.push(segundoMenor)
+
+  return novoArray
 }
 
 // EXERCÍCIO 11
 function ordenaArray(array) {
-  novoArray = []
-
-
 }
 
 // EXERCÍCIO 12
 function filmeFavorito() {
-  filmes = {
+  filme = {
     nome: 'O Diabo Veste Prada',
-    ano: Number(2006),
+    ano: 2006,
     diretor: 'David Frankel',
-    atores:['Meryl Streep', ' Anne Hathaway', 'Emily Blunt', 'Stanley Tucci'],
+    atores: ['Meryl Streep', 'Anne Hathaway', 'Emily Blunt', 'Stanley Tucci']
   }
-  return filmes
+  return filme
 }
 
 
@@ -136,46 +169,44 @@ function imprimeChamada() {
 
 // EXERCÍCIO 14
 function criaRetangulo(lado1, lado2) {
-  largura = lado1 
-  altura = lado2
-  perimetro = 2 * (lado1 + lado2)
-  area = lado1 * lado2
-  return {largura,altura,perimetro,area}
+  retangulo = {
+    largura: lado1,
+    altura: lado2,
+    perimetro: 2 * (lado1 + lado2),
+    area: lado1 * lado2
+  }
+  return retangulo
 }
 
 // EXERCÍCIO 15
 function anonimizaPessoa(pessoa) {
-  let  individuo = {
-    nome: "matheus",
-    idade: 25,
-    email: "astrodev@labenu.com.br",
-    endereco: "Rua do Futuro, 4"
+  return {
+    ...pessoa,
+    nome: 'ANÔNIMO'
   }
-  let novoArray ={...individuo,nome:'ANÔNIMO '} 
-  return novoArray
 }
 
 // EXERCÍCIO 16A
 function maioresDe18(arrayDePessoas) {
-const nomes =[
-    { nome: "Pedro", idade: 20 },
-    { nome: "João", idade: 10 },
-    { nome: "Paula", idade: 12 },
-    { nome: "Artur", idade: 89 } 
-  ]
-  let apenasDeMaiores =nomes.map(nomes.idade >=18 )
-  return apenasDeMaiores
-
+  const novoArray = arrayDePessoas.filter((pessoa) => {
+    return pessoa.idade >= 18
+  })
+  return novoArray
 }
-
 // EXERCÍCIO 16B
 function menoresDe18(arrayDePessoas) {
-
+  const novoArray = arrayDePessoas.filter((pessoa) => {
+    return pessoa.idade < 18
+  })
+  return novoArray
 }
 
 // EXERCÍCIO 17A
 function multiplicaArrayPor2(array) {
-
+  const novoArray = array.map((num) => {
+    return num * 2 
+  })
+  return novoArray
 }
 
 // EXERCÍCIO 17B
