@@ -2,12 +2,20 @@
 //
 //........................ EX 1 ..............................
 //
+
 //vai contar de 1 até 5 somando os valores
+=======
+//vai contar de 1 até 5
+
 //
 //........................ EX 2 ..............................
 //
 //A)vai mostrar todos os numeros maiores que o 19
+
 //B)declarar uma variavel com 0 e adicionar ++ a ela a cada loop indice = 0  indice ++
+=======
+//B)da console log na lista
+
 //........................ EX 3 ..............................
 //imprime 4 linhas de asteriscos cada linha com 1 * a mais
 //
@@ -15,6 +23,7 @@
 //
 //........................ EX 1 ..............................
 //
+
 /* let numeroDeBichinhos = Number(prompt("quantos bichinhos de estimação você tem ?"))
 if (numeroDeBichinhos === 0) {
     console.log("que pena mas você pode adotar um !!!")
@@ -122,4 +131,25 @@ console.log("------------------- vamos vogar --------------------")
 }
  */
 
+
+=======
+let pets = prompt("quantos pets vc tem?")
+let totalPets = []
+
+verificaPets = (numero) => {
+    if (numero === 0) {
+        console.log("você pode adotar um pet ")
+    } else {
+        let inicio = 0
+        let usuario = numero
+        while (inicio < usuario) {
+            let nomePet = prompt("qual nome de todos seu pets?")
+            let adicionaPet = totalPets.push(nomePet)
+            inicio++
+        }
+    }
+    console.log(totalPets)
+}
+
+verificaPets(pets)
 
