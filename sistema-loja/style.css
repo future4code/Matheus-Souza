@@ -1,0 +1,42 @@
+
+.logo{
+    display: inline-block;
+   font-size: xx-large;
+   color: rgb(201, 38, 16);
+}
+
+.img{
+    width:20px;
+}
+.social-media{
+    margin-left: 240px;
+   display: inline-block;
+}
+header{
+    padding-left: 40px;
+background-color: gray;
+}
+ul {
+    border:grey solid;
+    margin-top:0px;
+    background-color: gray;
+}
+th,td{
+    border:2px solid gray ;
+}
+.espeto{
+    height:330px;
+    width:250px;
+}
+.buffet{
+    width: 200px;
+}
+.sobremesas{
+    height:100px;
+    width: 200px;
+}
+.historico{
+    margin-left: 240px;
+    font-size: xx-large;
+}
+
