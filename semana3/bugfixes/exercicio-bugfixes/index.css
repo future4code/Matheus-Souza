@@ -103,6 +103,7 @@ div:last-child {
 }
 
 table {
+    margin: auto;
     text-align: center;
     width: 60%;
 }
