@@ -14,11 +14,13 @@ h2 {
     padding: 10px 5px 10px 5px;
     color: white;
     text-align: center;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
 }
 
 input {
     height: 20px;
-    width: 500px;
+    width: 400px;
 }
 
 button:focus {
@@ -69,7 +71,6 @@ div img {
   **/
 
 #container-de-descricao {
-    
     padding-top:100px;
     background-color: #2274a5;
     color: white;
@@ -115,7 +116,6 @@ td button {
 }
 
 .container-do-search {
-    margin-top: 20px;
     height: 100px;
 }
 
@@ -132,4 +132,5 @@ td button {
 
 #back-button:hover {
     background-color: #635a3d
+    
 }
