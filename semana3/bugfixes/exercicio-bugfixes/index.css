@@ -40,7 +40,7 @@ div img {
 .botao-amarelo {
     display: block;
     margin: auto;
-    background-color: #ffaf43;
+    background-color: #f7a234;
     width: 250px;
     height: 40px;
     border-radius: 5px;
@@ -49,7 +49,7 @@ div img {
 }
 
 .botao-amarelo:hover {
-    background-color: #c44f00;
+    background-color: #f7bb6e;
 }
 
 .container {
