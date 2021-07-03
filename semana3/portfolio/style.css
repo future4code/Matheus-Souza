@@ -24,13 +24,11 @@
       
       .ul-home {
           padding-top: 40px;
-          padding-right: 60px;
           float: right;
           font-family: 'Courier New', Courier, monospace;
       }
       
       li {
-          font-size: 20px;
           display: inline-block;
       }
       
@@ -62,6 +60,7 @@
       }
       
       img {
+          display: inline-block;
           border-radius: 50%;
           margin-bottom: 20px;
           margin: 30px;
@@ -70,7 +69,7 @@
       }
       
       .links {
-          padding-right: 5px;
+          padding-right: 40px;
       }
       
       .links :visited {
@@ -141,7 +140,34 @@
           text-align: center;
           font-size: 30px;
       }
+      /* habilidades */
+      
+      .habilidades {
+          display: inline-block;
+          padding-top: 40px;
+          padding-left: 40px;
+          font-size: 50px;
+      }
+      
+      .lista_habilidades {
+          padding-right: 10px;
+          float: right;
+          margin-top: 60px;
+          margin-right: 80px;
+      }
       
       .html {
-          background-color: brown;
+          border-radius: unset;
+          width: 300px;
+      }
+      
+      .css {
+          height: 300px;
+          width: 500px;
+          margin-top: 50px;
+          border-radius: unset;
+      }
+      
+      .div_inline {
+          display: inline-block;
       }
