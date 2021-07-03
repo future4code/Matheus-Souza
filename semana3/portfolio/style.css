@@ -1,97 +1,147 @@
-* {
-    padding: 0px;
-    margin: 0px;
-}
-
-body {
-    background-color: black;
-}
-
-main {
-    width: 1000px;
-    background-color: rgb(128, 208, 235);
-    display: inline-block;
-}
-
-.nome {
-    padding-bottom: 20px;
-    padding-left: 20px;
-    padding-top: 10px;
-    display: inline-block;
-    font-size: 3rem;
-}
-
-ul {
-    font-family: 'Courier New', Courier, monospace;
-    margin-top: 35px;
-    margin-right: 20px;
-    float: right;
-}
-
-li {
-    padding-right: 5px;
-    padding-left: 5px;
-    display: inline-block;
-}
-
-.container {
-    padding-top: 40px;
-    height: 550px;
-    margin-top: 200px;
-    background-color: lightblue;
-    max-width: 1000px;
-    margin: auto;
-}
-
-.apresentacao {
-    color: rgb(52, 39, 233);
-    text-align: justify;
-    margin-left: 50px;
-    margin-top: 40px;
-    font-size: 20px;
-    font-family: cursive;
-    padding-top: 20px;
-}
-
-a {
-    text-decoration: none;
-}
-
-img {
-    margin-bottom: 20px;
-    margin-right: 20px;
-    float: right;
-    width: 200px;
-    height: 200px;
-}
-
-.links {
-    text-decoration-color: blue;
-}
-
-.links:hover {
-    color: rgb(93, 61, 236);
-    font-size: 20px;
-    background-color: lightcoral;
-}
-
-
-/* certificaçoes */
-
-.main_certificados {
-    background-color: lightblue;
-    display: inline-block;
-    width: 1000px;
-}
-
-.container_certificados {
-    height: 550px;
-    background-color: lightblue;
-    max-width: 1000px;
-    margin: auto;
-}
-
-.certificados {
-    font-family: cursive;
-    font-size: 60px;
-}
+      * {
+          padding: 0px;
+          margin: 0px;
+      }
+      
+      body {
+          background-color: black;
+      }
+      
+      main_home {
+          width: 1000px;
+          background-image: url("img/back2.jpg");
+          display: inline-block;
+          background-size: cover;
+      }
+      
+      .nome {
+          padding-bottom: 20px;
+          padding-left: 20px;
+          padding-top: 10px;
+          display: inline-block;
+          font-size: 3rem;
+      }
+      
+      .ul-home {
+          padding-top: 40px;
+          padding-right: 60px;
+          float: right;
+          font-family: 'Courier New', Courier, monospace;
+      }
+      
+      li {
+          font-size: 20px;
+          display: inline-block;
+      }
+      
+      .container {
+          padding-top: 30px;
+          height: 550px;
+          margin-top: 200px;
+          background-color: lightblue;
+          max-width: 1000px;
+          margin: auto;
+      }
+      
+      .apresentacao {
+          color: rgb(0, 0, 0);
+          text-align: justify;
+          margin-left: 50px;
+          margin-top: 20px;
+          font-size: 25px;
+          font-family: cursive;
+          padding-top: 20px;
+      }
+      
+      a {
+          text-decoration: none;
+      }
+      
+      a :visited {
+          color: black;
+      }
+      
+      img {
+          border-radius: 50%;
+          margin-bottom: 20px;
+          margin: 30px;
+          width: 200px;
+          height: 200px;
+      }
+      
+      .links {
+          padding-right: 5px;
+      }
+      
+      .links :visited {
+          color: rgb(78, 81, 248);
+      }
+      
+      .links:hover {
+          border-radius: 10%;
+          background-color: rgb(163, 157, 157);
+          font-size: 25px;
+      }
+      /* certificaçoes */
+      
+      .main_certificados {
+          background-color: lightblue;
+          display: inline-block;
+          width: 1000px;
+      }
+      
+      .container_certificados {
+          padding-left: 50px;
+          height: 550px;
+          background-color: lightblue;
+          max-width: 1000px;
+          margin: auto;
+      }
+      
+      .certificados {
+          padding-top: 20px;
+          font-family: cursive;
+          font-size: 60px;
+      }
+      
+      .ensino_1 {
+          margin-right: 40px;
+          margin-top: 50px;
+          border: 1px dashed rgb(138, 138, 255);
+          background-color: rgba(122, 222, 255, 0.404);
+          float: left;
+      }
+      
+      .ensino_2 {
+          text-align: center;
+          margin-top: 50px;
+          border: 1px dashed rgb(138, 138, 255);
+          background-color: rgba(73, 179, 214, 0.404);
+          float: left;
+      }
+      
+      .lista_certificados {
+          float: right;
+          margin-top: 0px;
+          margin-right: 50px;
+      }
+      
+      .labenu {
+          border-radius: 10%;
+      }
+      
+      .ensino_medio {
+          font-family: Arial, Helvetica, sans-serif;
+          text-align: center;
+          font-size: 30px;
+      }
+      
+      .curso_programacao {
+          font-family: Arial, Helvetica, sans-serif;
+          text-align: center;
+          font-size: 30px;
+      }
+      
+      .html {
+          background-color: brown;
+      }
