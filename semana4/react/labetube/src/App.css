@@ -15,8 +15,13 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 50px;
+    padding: 0 80px;
     height: 10%;
+}
+#campoDeBusca{
+  padding: 8px;
+  border: 1px solid black;
+  width:50vw;
 }
 .icon{
   width: 20px;
@@ -42,7 +47,6 @@ li{
 .botoes-meunu-vertical {
     list-style-type: none;
 }
-
 .painel-de-videos {
     padding-left: 20px;
     padding-top: 20px;
