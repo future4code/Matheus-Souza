@@ -15,7 +15,7 @@ const Img= styled.img `
     margin-right: 10px;
     border-radius: 50%;
 `
-const H4 = styled.h4 `
+const H4 = styled.h2 `
     margin-bottom: 15px;
 
 `
