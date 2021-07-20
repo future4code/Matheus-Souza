@@ -7,15 +7,40 @@ import Etapa3 from './components/Etapa3';
 import Final from './components/Final';
 
 export default class form extends React.Component {
+ 
+  state = {
+    etapa: 1,
+  }
+  
+  renderizaEtapa = () => {
+    switch (this.state.etapa) {
+      case 1: 
+        return <Etapa1 />;
+      case 2: 
+        return <Etapa2 />;
+        case 3: 
+        return <Etapa3 />;
+        case 4: 
+        return <Final />;
+    }
+  }
+
+proximo=()=>{
+  this.setState({
+    etapa :this.state.etapa +1
+  })
+}
+
+
   render(){
   return (
-    <div className="App">
-      <Etapa1/>
-      <button>Próxima etapa</button>
-       <Etapa2/>
-      <Etapa3/>
-      <Final/>
+    <>
+    {this.renderizaEtapa()}
+      <button
+      onClick =  {this.proximo}>Próxima etapa
+      
+      </button>
 
-    </div>
+    </>
   );
 }}
