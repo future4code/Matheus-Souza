@@ -16,6 +16,14 @@ const Post = (props) => {
   const [comentarios , setComentarios] = useState ([])
 
   const onClickCurtida = () => {
+     // verifica se, no estado, cutido é true ou false
+     if (curtido) {
+      setCurtido(!curtido)
+      setNumeroDeCurtidas(-1)
+    } else {
+      setCurtido(!curtido)
+      setNumeroDeCurtidas(+1)
+    }
   };
 
   const onClickComentario = () => {
