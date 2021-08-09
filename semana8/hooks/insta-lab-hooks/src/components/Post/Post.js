@@ -9,7 +9,11 @@ import iconeCoracaoPreto from '../../img/favorite.svg'
 import iconeComentario from '../../img/comment_icon.svg'
 
 const Post = (props) => {
-
+  const [curtido, setCurtido] = useState(false)
+  const [numeroCurtidas, setNumeroDeCurtidas] = useState(0)
+  const [comentando, setComentando] = useState(false)
+  const [numeroComentarios, setNumeroDeComentarios] = useState(0)
+  const [comentarios , setComentarios] = useState ([])
 
   const onClickCurtida = () => {
   };
