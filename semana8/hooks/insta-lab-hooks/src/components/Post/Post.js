@@ -32,9 +32,9 @@ const Post = (props) => {
 
   const enviarComentario = (comentario) => {
     const listaDeComentarios = [...comentarios, comentario]
-    setComentarios:(listaDeComentarios)
-    setComentando:(false)
-    setNumeroDeComentarios:(numeroComentarios+1)
+    setComentarios(listaDeComentarios)
+    setComentando(false)
+    setNumeroDeComentarios(numeroComentarios+1)
   }
   const caixaDeComentario =comentando ? (
     <SecaoComentario enviarComentario={enviarComentario}/>
