@@ -31,7 +31,25 @@ const Post = (props) => {
   };
 
   const enviarComentario = (comentario) => {
+    const listaDeComentarios = [...comentarios, comentario]
+    setComentarios:(listaDeComentarios)
+    setComentando:(false)
+    setNumeroDeComentarios:(numeroComentarios+1)
   }
+  const caixaDeComentario =comentando ? (
+    <SecaoComentario enviarComentario={enviarComentario}/>
+  ) : (
+    // Funcao map sendo feita na propriedade comentarios do estado. Ou seja, está sendo pego todos os
+    // comentários do estado para serem renderizados na tela, dentro do componente CommentContainer 
+    comentarios.map(comentario => {
+      return (
+        <CommentContainer>
+          <p>{comentario}</p>
+        </CommentContainer>
+      )
+    })
+  )
+
   const iconeCurtida =curtido ? (iconeCoracaoPreto) : (iconeCoracaoBranco)
   return (
     <PostContainer>
@@ -46,16 +64,17 @@ const Post = (props) => {
         <IconeComContador
           icone={iconeCurtida}
           onClickIcone={onClickCurtida}
-          // valorContador={numeroCurtidas}
+          valorContador={numeroCurtidas}
         />
 
         <IconeComContador
           icone={iconeComentario}
           onClickIcone={onClickComentario}
-          // valorContador={numeroComentarios}
+          valorContador={numeroComentarios}
         />
       </PostFooter>
-      {/* {caixaDeComentario} */}
+      
+       {caixaDeComentario} 
     </PostContainer>
   )
 }
