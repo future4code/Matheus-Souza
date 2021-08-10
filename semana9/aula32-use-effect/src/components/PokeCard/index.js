@@ -16,11 +16,11 @@ export const PokeCard = (props) => {
         console.log(err);
       });
   };
-  useEffect((prevProps) => {
-    if (prevProps.pokemon !==props.pokemon) {
+
+  useEffect(() => {
       pegaPokemon(props.pokemon)
-    }
-  },[pokeName])
+  
+  },[props.pokemon])
 
     return (
       <div>

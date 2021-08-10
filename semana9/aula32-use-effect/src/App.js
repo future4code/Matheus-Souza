@@ -23,6 +23,9 @@ export const App = ()=> {
  const  changePokeName = event => {
     setPokeName(event.target.value)
   };
+
+  
+  const pokemon =pokeName;
     return (
       <div className="App">
         {/* evento onChange chama função toda vez que o usuário 
