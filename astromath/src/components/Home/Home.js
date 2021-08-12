@@ -37,12 +37,11 @@ img{
 export function Home() {
 
     const [perfil, setPerfil] = useState([])
-    const [escolha, setEscolha] = useState(false)
 
 
-        useEffect(() => {
-            pegaPerfil()
-        }, []);
+    useEffect(() => {
+        pegaPerfil()
+    }, []);
 
 
 
@@ -57,6 +56,17 @@ export function Home() {
             .catch((err) => { console.log(err) })
     }
 
+    const selecionaPerfil = (choice) => {
+        const url = `https://us-central1-missao-newton.cloudfunctions.net/astroMatch/:aluno/choose-person`
+        const body = {
+            id: perfil.id,
+            choice: choice
+        }
+        axios.post(url, body)
+            .then((res) => { console.log(res) })
+            .catch((err) => { console.log(err) })
+
+    }
 
     return <Container>
         <Header>
@@ -71,12 +81,18 @@ export function Home() {
             <p> {perfil.bio}</p>
         </Main>
         <button
-    onClick={()=>{setEscolha(true)}}
-    >sim</button>
-    <button
-    onClick={
-        ()=>{setEscolha(false)}}
-    >nops</button>
+            onClick={() => {
+                selecionaPerfil(true)
+            }}
+        >sim
+        </button>
+        <button
+            onClick={
+                () => {
+                    selecionaPerfil(false)
+                }}
+        >nops
+        </button>
     </Container>
 }
 export default Home
