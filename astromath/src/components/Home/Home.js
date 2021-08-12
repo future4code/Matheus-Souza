@@ -61,7 +61,7 @@ export function Home() {
     const selecionaPerfil = (choice) => {
         const url = `https://us-central1-missao-newton.cloudfunctions.net/astroMatch/matheus-de-souza-dos-santos-lovelace/choose-person`
         const body = {
-            id: perfil.id,
+            id: perfil.id, 
             choice: choice
         }
         axios.post(url, body)
@@ -80,7 +80,7 @@ export function Home() {
              <img src={perfil.photo} /> 
              {perfil.name} 
              {perfil.age} 
-             <p> {perfil.bio}</p> 
+             <p> {perfil.bio}</p>  
         </Main>
         <button
             onClick={() => {
