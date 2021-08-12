@@ -37,16 +37,18 @@ img{
 export function Home() {
 
     const [perfil, setPerfil] = useState([])
+    const [escolha, setEscolha]=useState(1)
 
 
     useEffect(() => {
         pegaPerfil()
-    }, []);
+        
+    }, [escolha]);
 
 
 
     const pegaPerfil = () => {
-        const url = `https://us-central1-missao-newton.cloudfunctions.net/astroMatch/:aluno/person`
+        const url = `https://us-central1-missao-newton.cloudfunctions.net/astroMatch/matheus-de-souza-dos-santos-lovelace/person`
         axios.get(url)
             .then((res) => {
                 setPerfil(res.data.profile)
@@ -57,7 +59,7 @@ export function Home() {
     }
 
     const selecionaPerfil = (choice) => {
-        const url = `https://us-central1-missao-newton.cloudfunctions.net/astroMatch/:aluno/choose-person`
+        const url = `https://us-central1-missao-newton.cloudfunctions.net/astroMatch/matheus-de-souza-dos-santos-lovelace/choose-person`
         const body = {
             id: perfil.id,
             choice: choice
@@ -75,13 +77,14 @@ export function Home() {
         </Header>
 
         <Main>
-            <img src={perfil.photo} />
-            {perfil.name}
-            {perfil.age}
-            <p> {perfil.bio}</p>
+             <img src={perfil.photo} /> 
+             {perfil.name} 
+             {perfil.age} 
+             <p> {perfil.bio}</p> 
         </Main>
         <button
             onClick={() => {
+                setEscolha(escolha+1)
                 selecionaPerfil(true)
             }}
         >sim
@@ -89,6 +92,7 @@ export function Home() {
         <button
             onClick={
                 () => {
+                    setEscolha(escolha+1)
                     selecionaPerfil(false)
                 }}
         >nops
