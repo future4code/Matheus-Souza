@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components'
 import axios from 'axios'
+import Tela from '../Tela/Tela';
 
-const Container = styled.div`
+export const Container = styled.div`
 max-width:400px;
 height:95vh;
 display: flex;
@@ -12,7 +13,7 @@ border-radius:2%;
 background-color: white;
 flex-direction: column;
 `
-const Header = styled.div`
+export const Header = styled.div`
 border-bottom: 1px solid gray;
 width: 100%;
 height: 50px;
@@ -34,21 +35,20 @@ img{
 }
 `
 
-export function Home() {
+export function Home(props) {
 
-    const [perfil, setPerfil] = useState([])
-    const [escolha, setEscolha]=useState(1)
+    const [perfil, setPerfil] = useState({})
+    const [escolha, setEscolha] = useState(1)
 
 
     useEffect(() => {
         pegaPerfil()
-        
     }, [escolha]);
 
 
 
     const pegaPerfil = () => {
-        const url = `https://us-central1-missao-newton.cloudfunctions.net/astroMatch/matheus-de-souza-dos-santos-lovelace/person`
+        const url = `https://us-central1-missao-newton.cloudfunctions.net/astroMatch/matheus-dos-santos-lovelace/person`
         axios.get(url)
             .then((res) => {
                 setPerfil(res.data.profile)
@@ -59,9 +59,9 @@ export function Home() {
     }
 
     const selecionaPerfil = (choice) => {
-        const url = `https://us-central1-missao-newton.cloudfunctions.net/astroMatch/matheus-de-souza-dos-santos-lovelace/choose-person`
+        const url = `https://us-central1-missao-newton.cloudfunctions.net/astroMatch/matheus-dos-santos-lovelace/choose-person`
         const body = {
-            id: perfil.id, 
+            id: perfil.id,
             choice: choice
         }
         axios.post(url, body)
@@ -73,18 +73,20 @@ export function Home() {
     return <Container>
         <Header>
             <h2>astromatch</h2>
-            <button>list</button>
+            <button onClick={() =>props.trocarTela("Tela")}>
+                LISTA   
+            </button> 
         </Header>
 
         <Main>
-             <img src={perfil.photo} /> 
-             {perfil.name} 
-             {perfil.age} 
-             <p> {perfil.bio}</p>  
+            <img src={perfil.photo} />
+            {perfil.name}
+            {perfil.age}
+            <p> {perfil.bio}</p>
         </Main>
         <button
             onClick={() => {
-                setEscolha(escolha+1)
+                setEscolha(escolha + 1)
                 selecionaPerfil(true)
             }}
         >sim
@@ -92,7 +94,7 @@ export function Home() {
         <button
             onClick={
                 () => {
-                    setEscolha(escolha+1)
+                    setEscolha(escolha + 1)
                     selecionaPerfil(false)
                 }}
         >nops
