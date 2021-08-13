@@ -6,7 +6,7 @@ import React, { useState, useEffect } from 'react';
 export const Tela=(props)=>{
 
 
-    const [perfil, setPerfil] = useState({})
+    const [perfil, setPerfil] = useState([])
 
 
     useEffect(() => {
@@ -14,14 +14,19 @@ export const Tela=(props)=>{
     }, []);
 
     const mostraLista=()=>{
-        const url = `https://us-central1-missao-newton.cloudfunctions.net/astroMatch/matheus-dos-santos-lovelace/matches`
+        const url = `https://us-central1-missao-newton.cloudfunctions.net/astroMatch/matheus-santos-lovelace/matches`
         axios.get(url)
         .then((res)=>{
-            setPerfil(res.data)
+            setPerfil(res.data.matches)
+            console.log('res.data',res.data)
             console.log('perfil->',perfil)})
         .catch((err)=>{console.log(err)})
     
     }
+
+    const mostra = perfil.map((p)=>{
+        return<p>{p.name}</p>
+    }) 
 
     return <Container>
         <Header>
@@ -32,8 +37,8 @@ export const Tela=(props)=>{
             </Header>
             content
             {perfil.name}
-            {console.log('name',perfil.matches)}
             {perfil.name}
+            {mostra}
             </Container>
 }
 export default Tela

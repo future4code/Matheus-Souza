@@ -48,7 +48,7 @@ export function Home(props) {
 
 
     const pegaPerfil = () => {
-        const url = `https://us-central1-missao-newton.cloudfunctions.net/astroMatch/matheus-dos-santos-lovelace/person`
+        const url = `https://us-central1-missao-newton.cloudfunctions.net/astroMatch/matheus-santos-lovelace/person`
         axios.get(url)
             .then((res) => {
                 setPerfil(res.data.profile)
@@ -59,7 +59,7 @@ export function Home(props) {
     }
 
     const selecionaPerfil = (choice) => {
-        const url = `https://us-central1-missao-newton.cloudfunctions.net/astroMatch/matheus-dos-santos-lovelace/choose-person`
+        const url = `https://us-central1-missao-newton.cloudfunctions.net/astroMatch/matheus-santos-lovelace/choose-person`
         const body = {
             id: perfil.id,
             choice: choice
