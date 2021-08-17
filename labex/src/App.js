@@ -1,8 +1,10 @@
 import React from "react"
+import  Router  from "./route/Router";
+
 function App() {
   return (
-    <>
-     <h1>oi</h1> 
+    <> 
+     <Router/>
     </>
   );
 }
