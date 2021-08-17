@@ -27,7 +27,7 @@ const  Router=()=>{
     <ApplicationFormPage/>
 </Route>
 
-<Route  exact path={"login"}>
+<Route  exact path={"/login"}>
     <LoginPage/>
 </Route>
 

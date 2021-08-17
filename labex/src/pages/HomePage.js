@@ -1,12 +1,30 @@
 import React from "react"
+import { useHistory } from "react-router-dom";
 
 const  HomePage=()=>{
 
+    const history = useHistory();
+
+      const goLoginPage= () => {
+        history.push("/login");
+      };
+
+      const goListTripsPage= () => {
+        history.push("/trips/list");
+      };
     return(
-    <>
-    <h1>Home Page</h1>
-     Para o usuário escolher entre Área Administrativa e Lista de Viagens
-    </>
+    <p>
+    <h1>labex</h1>
+    <br/>
+     <button
+     onClick={goLoginPage}
+     >àrea do admin
+     </button>
+     <br/>
+     <button
+     onClick={goListTripsPage}
+     >ver viagens</button>
+    </p>
     )
 }
 export default HomePage 

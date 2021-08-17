@@ -1,11 +1,21 @@
 import React from "react"
+import { useHistory } from "react-router-dom";
 
 const  TripDetailsPage=()=>{
+    
+    const history = useHistory();
+
+
+    const voltar = () => {
+        history.goBack("/");
+    };
+
 
     return(
         <>
-        <h1>trip details  Page</h1>
-        Para o administrador ver o detalhe de uma viagem específica, bem como os candidatos que aplicaram para ela
+        <h1>ver detalhes de viagens  e candidatos que aplicaram para ela</h1>
+        <button onClick={voltar}>voltar</button>
+        <button>criar</button>
         </>
         )
 }
