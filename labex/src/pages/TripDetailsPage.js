@@ -1,8 +1,9 @@
 import React from "react"
 import { useHistory } from "react-router-dom";
+import useProtectedPage from "../hooks/useProtectedPage";
 
 const  TripDetailsPage=()=>{
-    
+    useProtectedPage()
     const history = useHistory();
 
 

@@ -1,9 +1,8 @@
-import React from "react"
+import React, { useEffect } from "react"
 import { useHistory } from "react-router-dom";
-
+import useProtectedPage from "../hooks/useProtectedPage";
 const  CreateTripPage=()=>{
-
-
+    useProtectedPage()
     const history = useHistory();
 
     const voltar = () => {
