@@ -10,7 +10,7 @@ const  LoginPage=()=>{
 
 
     const login = () => {
-        const url = `https://us-central1-labenu-apis.cloudfunctions.net/labeX/darvas/login`;
+        const url = `https://us-central1-labenu-apis.cloudfunctions.net/labeX/matheus-dos-santos-lovelace/login`;
         const body = {
           email: email,
           password: senha
@@ -60,7 +60,7 @@ const  LoginPage=()=>{
       />
        <button onClick={login}>entrar</button>
 
-      <h1>astrodev@gmail.com </h1>
+      <h1>matheus@gmail.com.br</h1>
       <h2>123456</h2>
        
         </>
