@@ -17,8 +17,7 @@ const  LoginPage=()=>{
         };
         axios
           .post(url, body)
-          .then((res) => {
-            
+          .then((res) => {         
             history.push("/admin/trips/list");
             localStorage.setItem("token", res.data.token);
             console.log(res);
@@ -32,9 +31,6 @@ const  LoginPage=()=>{
         history.push("/");
     };
 
-    const goAdminHomePage = () => {
-        history.push("/admin/trips/list");
-      };
 
     return(
         <>

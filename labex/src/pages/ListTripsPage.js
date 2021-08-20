@@ -2,6 +2,23 @@ import { isTemplateElement } from "@babel/types";
 import axios from "axios";
 import React, { useEffect, useState } from "react"
 import { useHistory } from "react-router-dom";
+import styled from "styled-components"
+
+
+const Container = styled.div`
+display: flex;
+align-items: center;
+flex-direction: column;
+`
+const CardList=styled.div`
+margin: 10px;
+padding: 20px;
+width: 300px;
+border:1px solid black;
+p{
+    color: gray;
+}
+`
 
 const ListTripsPage = () => {
 
@@ -34,18 +51,17 @@ const ListTripsPage = () => {
     };
 
     const mostra = lista.map((i) => {
-        return <ul>
-            <li>{i.name}</li>
-            <li>{i.description}</li>
-            <li>{i.date}</li>
-            <li>{i.planet}</li>
-        </ul>
+        return <CardList>
+            <p>NOME:{i.name}</p>
+            <p>DESCRIÇÃO:{i.description}</p>
+            <p>DATA:{i.date}</p>
+            <p>PLANETA:{i.planet}</p>
+        </CardList>
     })
     return (
-        <>
-            <h1>list trips page</h1>
-            Para vermos todas as viagens
-
+        <Container>
+            <h1>lista de viagens</h1>
+           
             <button
                 onClick={voltar}
             >voltar</button>
@@ -56,7 +72,7 @@ const ListTripsPage = () => {
 
 
             {mostra}
-        </>
+        </Container>
     )
 }
 export default ListTripsPage

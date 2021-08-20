@@ -1,22 +1,25 @@
-import React from "react"
-import { useHistory } from "react-router-dom";
+import React, { useState } from "react"
+import { useHistory,useParams } from "react-router-dom";
 import useProtectedPage from "../hooks/useProtectedPage";
 import { useEffect } from "react";
 import axios from "axios"
+
+
+
 const  TripDetailsPage=()=>{
 
+  const params=useParams()
+  const id = params.id
+  const [listaa,setListaa]=useState()
 
-    useProtectedPage()
-    const history = useHistory();
-
-    const voltar = () => {
-        history.goBack("/");
-    };
 
     useEffect(() => {
-        console.log('useeffect')
+        lista()
+    }, []);
+  
+    const lista=()=>{
         const token = localStorage.getItem("token");
-        const url = `https://us-central1-labenu-apis.cloudfunctions.net/labeX/matheus-dos-santos-lovelace/trip/HF3V6C2VFWoQ3QUOVJON`;
+        const url = `https://us-central1-labenu-apis.cloudfunctions.net/labeX/matheus-dos-santos-lovelace/trip/${id}`;
     
         axios
           .get(url, {
@@ -25,19 +28,29 @@ const  TripDetailsPage=()=>{
             }
           })
           .then((res) => {
-            console.log('deu certo',res.data);
+            setListaa(res.data.trip.name)
+            console.log('trip detail page',res.data.trip.name);
           })
           .catch((err) => {
-            console.log('deu errado',err.response);
+            console.log('deu errado',err);
           });
-      }, []);
-    
+    }
+    useProtectedPage()
+    const history = useHistory();
+
+    const voltar = () => {
+        history.push("/");
+    };
+
+  
+   
 
     return(
         <>
         <h1>ver detalhes de viagens  e candidatos que aplicaram para ela</h1>
         <button onClick={voltar}>voltar</button>
-        <button>criar</button>
+    {listaa}
+    {console.log('lista',listaa)}
         </>
         )
 }

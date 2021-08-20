@@ -35,11 +35,11 @@ const  Router=()=>{
     <AdminHomePage/>
 </Route>
 
-<Route  exact path={"/admin/trips/create"}>
+<Route  exact path={"/admin/trips/:id"}>
     <TripDetailsPage/>
 </Route>
 
-<Route  exact path={"/admin/trips/:id"}>
+<Route  exact path={"/admin/trips/create"}>
     <CreateTripPage/>
 </Route>
 
