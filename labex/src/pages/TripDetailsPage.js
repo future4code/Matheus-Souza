@@ -7,6 +7,7 @@ import axios from "axios"
 
 
 const  TripDetailsPage=()=>{
+   useProtectedPage() 
 
   const params=useParams()
   const id = params.id
@@ -35,7 +36,6 @@ const  TripDetailsPage=()=>{
             console.log('deu errado',err);
           });
     }
-    useProtectedPage()
     const history = useHistory();
 
     const voltar = () => {
@@ -47,7 +47,7 @@ const  TripDetailsPage=()=>{
 
     return(
         <>
-        <h1>ver detalhes de viagens  e candidatos que aplicaram para ela</h1>
+        <h1>trip detail page</h1>
         <button onClick={voltar}>voltar</button>
     {listaa}
     {console.log('lista',listaa)}
