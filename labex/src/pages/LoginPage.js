@@ -20,7 +20,6 @@ const  LoginPage=()=>{
           .then((res) => {         
             history.push("/admin/trips/list");
             localStorage.setItem("token", res.data.token);
-            console.log(res);
           })
           .catch((err) => {
             console.log(err.response.data.message);

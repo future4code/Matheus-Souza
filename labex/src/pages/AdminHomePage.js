@@ -59,7 +59,6 @@ const AdminHomePage = () => {
   const mostra = lista.map((i) => {
     return <>
       <CardList 
-      key={i.id}
       onClick={() => {
         goTripDetailsPage(i.id)
       }}>{i.name}</CardList>

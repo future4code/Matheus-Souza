@@ -30,7 +30,6 @@ const  TripDetailsPage=()=>{
           })
           .then((res) => {
             setListaa(res.data.trip.name)
-            console.log('trip detail page',res.data.trip.name);
           })
           .catch((err) => {
             console.log('deu errado',err);
@@ -50,7 +49,6 @@ const  TripDetailsPage=()=>{
         <h1>trip detail page</h1>
         <button onClick={voltar}>voltar</button>
     {listaa}
-    {console.log('lista',listaa)}
         </>
         )
 }

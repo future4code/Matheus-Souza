@@ -14,7 +14,7 @@ const  HomePage=()=>{
         history.push("/trips/list");
       };
     return(
-    <p>
+    <div>
     <h1>labex</h1>
     <br/>
      <button
@@ -25,7 +25,7 @@ const  HomePage=()=>{
      <button
      onClick={goListTripsPage}
      >ver viagens</button>
-    </p>
+    </div>
     )
 }
 export default HomePage 

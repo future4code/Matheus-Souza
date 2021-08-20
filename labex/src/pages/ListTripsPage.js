@@ -49,7 +49,7 @@ const ListTripsPage = () => {
     };
 
     const mostra = lista.map((i) => {
-        return <CardList>
+        return <CardList key={i.id}>
             <p>NOME:{i.name}</p>
             <p>DESCRIÇÃO:{i.description}</p>
             <p>DATA:{i.date}</p>
