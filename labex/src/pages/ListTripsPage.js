@@ -1,4 +1,3 @@
-import { isTemplateElement } from "@babel/types";
 import axios from "axios";
 import React, { useEffect, useState } from "react"
 import { useHistory } from "react-router-dom";
@@ -40,7 +39,6 @@ const ListTripsPage = () => {
             .get(url)
             .then((res) => {
                 setLista(res.data.trips)
-                console.log('deu certo', res.data.trips)
             })
             .catch((err) => { console.log('deu errado', err) })
 

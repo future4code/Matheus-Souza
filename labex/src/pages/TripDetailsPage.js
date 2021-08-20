@@ -16,7 +16,7 @@ const  TripDetailsPage=()=>{
 
     useEffect(() => {
         lista()
-    }, []);
+    });
   
     const lista=()=>{
         const token = localStorage.getItem("token");

@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react"
-import { useHistory, useParams } from "react-router-dom";
-import TripDetailsPage from "./TripDetailsPage";
+import { useHistory, } from "react-router-dom";
 import useProtectedPage from "../hooks/useProtectedPage";
 import axios from "axios";
 import styled from "styled-components"
@@ -21,8 +20,6 @@ margin: auto;
 
 const AdminHomePage = () => {
   const [lista, setLista] = useState([])
-  const [id, setId] = useState("")
-  console.log('setid', id)
 
   const history = useHistory();
 
@@ -54,7 +51,6 @@ const AdminHomePage = () => {
       .get(url)
       .then((res) => {
         setLista(res.data.trips)
-        console.log('deu certo', res.data.trips)
       })
       .catch((err) => { console.log('deu errado', err) })
 
@@ -62,8 +58,9 @@ const AdminHomePage = () => {
   }
   const mostra = lista.map((i) => {
     return <>
-      <CardList onClick={() => {
-        setId(i.id)
+      <CardList 
+      key={i.id}
+      onClick={() => {
         goTripDetailsPage(i.id)
       }}>{i.name}</CardList>
     </>

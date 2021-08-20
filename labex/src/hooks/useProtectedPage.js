@@ -9,6 +9,6 @@ export const useProtectedPage=()=>{
       console.log("não existe token");
       history.push("/login");
     }
-  }, []);
+  });
 }
 export default useProtectedPage
