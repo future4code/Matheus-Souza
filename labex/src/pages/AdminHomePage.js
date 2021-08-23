@@ -41,9 +41,24 @@ const AdminHomePage = () => {
     history.push(`/admin/trips/${id}`);
   };
 
+  const deleteTrip = (id) => {
+    const token = localStorage.getItem("token");
+    axios.delete(`https://us-central1-labenu-apis.cloudfunctions.net/labeX/matheus-dos-santos-lovelace/trips/${id}`,
+    {
+        headers: {
+            'Content-Type' : 'application/json',
+            auth : token
+        }
+    })
+    .then(r => {
+        console.log(r)
+    })
+    .catch(e => console.log(e.response))
+}
+
   useEffect(() => {
     getTrips()
-  }, []);
+  }, [lista]);
 
   const getTrips = () => {
     const url = `https://us-central1-labenu-apis.cloudfunctions.net/labeX/matheus-dos-santos-lovelace/trips`
@@ -61,7 +76,17 @@ const AdminHomePage = () => {
       <CardList 
       onClick={() => {
         goTripDetailsPage(i.id)
-      }}>{i.name}</CardList>
+      }}>{i.name} 
+      <button
+       onClick={
+        
+        ()=>{
+          console.log('delete ')
+          deleteTrip(i.id)}
+      
+      } 
+      >X</button>
+      </CardList>
     </>
   })
   return (

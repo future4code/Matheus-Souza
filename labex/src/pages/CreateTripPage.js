@@ -22,11 +22,11 @@ const CreateTripPage = () => {
         const url=`https://us-central1-labenu-apis.cloudfunctions.net/labeX/matheus-dos-santos-lovelace/trips`
 
         const body={
-            "name": "Ano novo em Mercúrio",
-            "planet": "Mercúrio",
-            "date": "31/12/2019",
-            "description": "Venha passar a virada pertinho do Sol!",
-            "durationInDays": 7
+            name:name ,
+            planet: planet,
+            date:date,
+            description: description,
+            durationInDays: durationInDays
         }
         axios.post(url,body,{
             headers: {
@@ -34,21 +34,17 @@ const CreateTripPage = () => {
                 auth: token
             }
         })
-        .then((res)=>{console.log(res)})
+        .then((res)=>{console.log('trip criada',res.data.trip)})
         .catch((err)=>{
             console.log('deu errado',err)})
 
     } 
 
 
- 
-
-
-
     return (
         <>
             <h1>create trip Page</h1>
-            {/* <form>
+          <form>
             <input
             onChange={(e)=>{setName(e.target.value)}}
             value={name}
@@ -60,6 +56,7 @@ const CreateTripPage = () => {
                 placeholder="escolha um planeta"
             />
             <input
+            type="date"
             onChange={(e)=>{setDate(e.target.value)}}
              value={date}
                 placeholder="data"
@@ -74,7 +71,7 @@ const CreateTripPage = () => {
               value={durationInDays}
                 placeholder="duração em dias"
             />
-            </form> */}
+            </form> 
             <button
                 onClick={voltar}
             >voltar</button>
