@@ -1,5 +1,6 @@
 import react from "react"
 import { BrowserRouter,Switch,Route } from "react-router-dom"
+import Header from "../components/Header/Header"
 import AddRecipePage from "../pages/AddRecipePage/AddRecipePage"
 import LoginPage from "../pages/LoginPage/LoginPage"
 import RecipeDetailPage from "../pages/RecipeDetailPage/RecipeDetailPage"
@@ -9,6 +10,7 @@ import SignUpPage from "../pages/SignUpPage/SignUpPage"
 const Router=()=>{
     return (
     <BrowserRouter>
+    <Header/>
      <Switch>
 
       <Route exact path={"/"}>
