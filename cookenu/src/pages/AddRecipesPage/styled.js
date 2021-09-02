@@ -5,7 +5,6 @@ export const ScreenContainer = styled.div`
   flex-direction: column;
   align-items: center;
   width: 100vw;
-  margin-top: 10vh;
 `
 
 export const InputsContainer = styled.div`
@@ -17,7 +16,7 @@ export const InputsContainer = styled.div`
   margin-bottom: 20px;
 `
 
-export const SignUpFormContainer = styled.div`
+export const AddRecipeFormContainer = styled.div`
   display: flex;
   flex-direction: column;
   width: 80vw;
@@ -26,7 +25,9 @@ export const SignUpFormContainer = styled.div`
   margin-bottom: 20px;
 `
 
-export const LogoImage = styled.img`
-  width: 70vw;
-  max-width: 350px;
+export const RecipeContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10vh;
 `
