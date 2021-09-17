@@ -25,14 +25,35 @@ button{
 
 function App() {
 
+    const [isFlipped, setIsFlipped] =useState(false)
+
+
+     const shuffleArray=(arr)=>{
+      console.log('embaralhadas')
+      setIsFlipped(true)
+      if(isFlipped){
+        
+    for (let i = arr.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [arr[i], arr[j]] = [arr[j], arr[i]];
+    }
+      }
+    return arr;
+  }
+
+  const map=cards.cards.map((item,index)=>(
+  
+    <Card carta={item} key={`card-${index}`} isFlipped={isFlipped} setIsFlipped={setIsFlipped} />
+
+  ))
+
+
   return (
     <div>
-      <Header><button>iniciar jogo</button></Header>
+      <Header><button onClick={()=>{shuffleArray(cards.cards)}}>Jogar</button></Header>
     <ContainerCards >
       
-      {cards.cards.map((item,index)=>(
-        <Card carta={item} key={`card-${index}`} />
-      ))}
+      {map}
     </ContainerCards>
     </div>
   );

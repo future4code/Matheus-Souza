@@ -42,11 +42,8 @@ width:100px;
 height:180px;
 `
 
-
-
-
-
-const Card = ({ carta }) => {
+const Card = (carta) => {
+  const [isFlipped, setIsFlipped] =useState(true)
   const [modalIsOpen, setIsOpen] =useState(false);
 
   function openModal() {
@@ -56,9 +53,6 @@ const Card = ({ carta }) => {
   function closeModal() {
     setIsOpen(false);
   }
-
-    const [isFlipped, setIsFlipped] =useState(true)
-
 
     return (
       <>
@@ -72,27 +66,26 @@ const Card = ({ carta }) => {
       >
         <ContainerModal onClick={closeModal}>
        <ImgContainer>
-        <img src={`https://dkw5ssdvaqf8l.cloudfront.net/static/psr/br/framework/yii/images/content/pt-br/product/tarot/marselha/162x341/${carta.image}`}/>
+        <img src={`https://dkw5ssdvaqf8l.cloudfront.net/static/psr/br/framework/yii/images/content/pt-br/product/tarot/marselha/162x341/${carta.carta.image}`}/>
        </ImgContainer>
        <Description>
         Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncov
-        er many web sites still in their infancy. Various versions have evolved over the ye
+        er many web sites still in their infancy. Various versions have evolved over the 
         ars, sometimes by accident, sometimes on purpose (injected humour and the like
        </Description>
        </ContainerModal>
       </Modal>
     </div>
-       <ReactCardFlip isFlipped={isFlipped} flipDirection="horizontal">
+       <ReactCardFlip isFlipped={carta.isFlipped} flipDirection="horizontal">
         <div
-         onClick={() => setIsFlipped((prev) => !prev)}
         >
           <div >
-              <Img src={`https://dkw5ssdvaqf8l.cloudfront.net/static/psr/br/framework/yii/images/content/pt-br/product/tarot/marselha/162x341/${carta.image}`}/>
+              <Img src={`https://dkw5ssdvaqf8l.cloudfront.net/static/psr/br/framework/yii/images/content/pt-br/product/tarot/marselha/162x341/${carta.carta.image}`}/>
           </div>
 
       </div>
         <div
-          onClick={() => setIsFlipped((prev) => !prev)}>
+          onClick={() => carta.setIsFlipped((prev) => !prev)}>
               <Img onClick={openModal} src={"https://dkw5ssdvaqf8l.cloudfront.net/static/psr/br/framework/yii/images/content/pt-br/product/tarot/marselha/back-blue-card.png"}/>
         </div>
       </ReactCardFlip>
