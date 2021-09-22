@@ -11,7 +11,7 @@ type estatisticas={
 function obterEstatisticas(numeros:number[]):estatisticas{
 
     const numerosOrdenados = numeros.sort(
-        (a:any, b:any) => a - b
+        (a:number, b:number) => a - b
     )
 
     let soma:number = 0
@@ -20,7 +20,7 @@ function obterEstatisticas(numeros:number[]):estatisticas{
         soma += num
     }
 
-    const estatisticas = {
+    const estatisticas:estatisticas= {
         maior: numerosOrdenados[numeros.length - 1],
         menor: numerosOrdenados[0],
         media: soma / numeros.length
