@@ -2,7 +2,7 @@
 //A)aparece um erro pois não aceito numeros em variaveis do tipo string
 //B)declarando number|string
 //C)
-/* type pessoa={
+type pessoa={
     nome:string,
     idade:number,
     corFavorita:string
@@ -39,30 +39,4 @@ const pessoa3:pessoa={
 
 const pessoas:pessoa[]=[pessoa1,pessoa2,pessoa3]
 
-console.table(pessoas) */
-
-//----------------------------------------Exercício 2 --------------------------------------------------------
-//A)
-
-
-function obterEstatisticas(numeros:number|any) {
-
-    const numerosOrdenados = numeros.sort(
-        (a:any, b:any) => a - b
-    )
-
-    let soma:number = 0
-
-    for (let num of numeros) {
-        soma += num
-    }
-
-    const estatisticas = {
-        maior: numerosOrdenados[numeros.length - 1],
-        menor: numerosOrdenados[0],
-        media: soma / numeros.length
-    }
-
-    return estatisticas
-}
-//B)não consegui essa
+console.table(pessoas) 
