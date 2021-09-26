@@ -31,6 +31,13 @@ app.post("/users/create",(req:Request,res:Response)=>{
       const[day, month, year]=dateOfBirthString.split("/")
       const dateOfBirth:Date=new Date(`${year}-${month}-${day}`)
 
+      const age:number =2021-year
+
+      if(age<18){
+          throw new Error("tem que ser maior de idade")
+      }
+
+
       accounts.push({
           name,
           CPF,
