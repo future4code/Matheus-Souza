@@ -37,7 +37,6 @@ app.post("/users/create",(req:Request,res:Response)=>{
           throw new Error("tem que ser maior de idade")
       }
 
-
       accounts.push({
           name,
           CPF,
