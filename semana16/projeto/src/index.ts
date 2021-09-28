@@ -74,7 +74,7 @@ app.put("/user/edit/:id",(req:Request,res:Response)=>{
 
     const { name, nickName, email}: user = req.body
 
-    console.log(name,nickName)
+    console.log(name)
 
     
 
