@@ -6,6 +6,8 @@ import { AddressInfo } from "net";
 import getUsers from "./endpoints/createUser";
 import createUser from "./endpoints/createUser";
 import getUserById from "./endpoints/getUserById";
+import updateUser from "./data/updateUser";
+import editUser from "./endpoints/editUser";
 
 dotenv.config();
 
@@ -35,3 +37,4 @@ const server = app.listen(process.env.PORT || 3003, () => {
 
 app.put("/users",createUser)
 app.get("/users/:id",getUserById)
+app.post("/users/edit/:id",editUser)
