@@ -1,31 +1,6 @@
-import express, { Express } from "express";
-import knex from "knex";
-import cors from "cors";
-import dotenv from "dotenv";
-import { AddressInfo } from "net";
-
-dotenv.config();
-
-export const connection = knex({
-	client: "mysql",
-	connection: {
-    host: process.env.DB_HOST,
-    port: 3306,
-    user: process.env.DB_USER,
-    password: process.env.DB_PASS,
-    database: process.env.DB_NAME
-  }
-});
-
-const app: Express = express();
-app.use(express.json());
-app.use(cors());
-
-const server = app.listen(process.env.PORT || 3003, () => {
-    if (server) {
-       const address = server.address() as AddressInfo;
-       console.log(`Server is running in http://localhost: ${address.port}`);
-    } else {
-       console.error(`Failure upon starting server.`);
-    }
-});
+//-------------------------------------------- EX 1 ---------------------------------------------
+//A)Para que serve o construtor dentro de uma classe e como fazemos para chamá-lo?
+//R:é tipo uma função da classe e é chamada igual uma função
+//
+//B) Copie o código abaixo para o seu exercício de hoje; crie uma instância dessa classe (dê o nome, cpf e idade que você quiser). Quantas vezes a mensagem "Chamando o construtor da classe User" foi impressa no terminal?
+//R:
