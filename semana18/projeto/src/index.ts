@@ -3,6 +3,7 @@ import knex from "knex";
 import cors from "cors";
 import dotenv from "dotenv";
 import { AddressInfo } from "net";
+import { createUser } from "./endpoints/createUser";
 
 dotenv.config();
 
@@ -29,3 +30,5 @@ const server = app.listen(process.env.PORT || 3003, () => {
        console.error(`Failure upon starting server.`);
     }
 });
+
+app.post("/user",createUser)
