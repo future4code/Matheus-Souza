@@ -6,7 +6,10 @@ R:cost é o tempo de execução do algoritmo e salt é uma string aleatória,é 
 b. Instale o bcryptjs no seu projeto e comece criando a função generateHash(), que será responsável por criptografar uma string usando o bcryptjs. 
 
 
+a. Para realizar os testes corretamente, qual deles você deve modificar primeiro? O cadastro ou o login? Justifique
+R:iditar o de cadastro primeiro 
 
+d. No exercício de ontem, nós criamos o endpoint user/profile. Também temos que modificar esse endpoint devido à adição da criptografia? Justifique.
 
 
 
