@@ -1,0 +1,8 @@
+node_modules
+build
+
+.env
+
+.vscode
+requests.rest
+anotacoes.md
