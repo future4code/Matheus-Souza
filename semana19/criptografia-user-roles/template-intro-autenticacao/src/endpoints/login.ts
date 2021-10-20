@@ -1,6 +1,7 @@
 import { Request, Response } from "express"
 import { connection } from "../data/connection"
 import { authenticator } from "../services/authenticator"
+import { HashMananger } from "../services/hashManager"
 
 export const login = async (
     req: Request,
@@ -13,7 +14,13 @@ export const login = async (
         const [user] = await connection("to_do_list_users")
             .where({ email })
 
-        if (!user || user.password !== password) {
+
+        const verificaLogin:boolean=new HashMananger().compareHash(password,user.password)
+
+        console.log(verificaLogin)
+
+
+        if (!user || !verificaLogin) {
             res.statusCode = 401
             throw new Error("email ou senha inválido")
         }

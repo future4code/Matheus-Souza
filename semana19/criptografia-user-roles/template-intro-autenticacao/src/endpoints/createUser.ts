@@ -1,6 +1,7 @@
 import { Request, Response } from "express";
 import { connection } from "../data/connection";
 import { authenticator } from "../services/authenticator";
+import { HashMananger } from "../services/hashManager";
 import { IdGenerator } from "../services/idGenerator";
 import { user } from "../types";
 
@@ -27,7 +28,9 @@ export default async function createUser(
 
       const id: string = new IdGenerator().generateId()
 
-      const newUser: user = { id, name, nickname, email, password }
+      const cipherText=new HashMananger().generateHash(password)
+
+      const newUser: user = { id, name, nickname, email, password:cipherText }
 
       await connection('to_do_list_users')
          .insert(newUser)
