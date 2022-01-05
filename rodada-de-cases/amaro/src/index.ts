@@ -2,6 +2,8 @@ import express, { Express, Request, Response } from 'express'
 import cors from 'cors'
 import { AddressInfo } from "net";
 import dotenv from "dotenv";
+import { connection } from './data/connection';
+import { createProduct } from './endpoints/createProduct';
 
 dotenv.config();
 
@@ -19,16 +21,4 @@ const server = app.listen(process.env.PORT || 3003, () => {
     }
 });
 
-app.get("/ping", (req: Request, res: Response) => {
-    res.send('pong')
-})
-
-
-app.post('/teste', (req: Request, res: Response) => {
-    try {
-        
-
-    } catch (error: any) {
-        console.log(error)
-    }
-})
+app.post("/create",createProduct)
