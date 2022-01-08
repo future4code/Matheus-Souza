@@ -1,7 +1,9 @@
+import RouterF from "./routes/RouterF";
+
 function App() {
   return (
     <div>
-    salve
+   <RouterF/>
     </div>
   );
 }
