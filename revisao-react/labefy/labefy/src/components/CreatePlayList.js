@@ -15,13 +15,10 @@ export const CreatePlayList = () => {
 
     const createPlayList = () => {
         axios.post(BASE_URL,form,Authorization)
-            .then(res => console.log(res.data))
+            .then(res =>alert('play list criada'))
             .catch((err) => {
-                console.log('Authorization que  NÃO funciona',Authorization)
-                console.log(err.response.data)})
+               alert(err.response.data.message)})
     }
-
-    console.log(Authorization)
     return (
         <>
             <form onSubmit={onSubmitForm}>
@@ -31,9 +28,9 @@ export const CreatePlayList = () => {
                     value={form.name}
                     onChange={onChange}
                     required
+                    placeholder="Play name"
                 />
                 <button
-                onClick={console.log('Authorization',Authorization)}
                     type={"submit"}>Save</button>
             </form>
         </>
