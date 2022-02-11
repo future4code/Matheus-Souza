@@ -60,3 +60,16 @@ export const speciesUrls = {
     9:"https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.eOASUZ5J4mqRizYIMoqftwHaDt%26pid%3DApi&f=1",
     10:"https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP.bxThjNxg800KUwOmZtQwWwHaDt%26pid%3DApi&f=1",
 }
+
+export const starshipsUrls = {
+    1:"https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.mtQjgeKwlUfbUpNIV3QoPgHaDt%26pid%3DApi&f=1",
+    2:"https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP.0e-gi8e7rO8VgCDPWlDkHAHaEo%26pid%3DApi&f=1",
+    3:"https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP.Fzh2fbDWxqXAvfYszFOGlwHaEK%26pid%3DApi&f=1",
+    4:"https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.LTTZfUjfEdQ_8MLiz8ctUQHaFj%26pid%3DApi&f=1",
+    5:"https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP.pBHaklSh1mKvmtln13S9HwHaEK%26pid%3DApi&f=1",
+    6:"https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.TjBZzrSoX1_EjeiFzae2dwHaD9%26pid%3DApi&f=1",
+    7:"https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP.sbjT8ruI2phk9hcKrt4gUQHaEc%26pid%3DApi&f=1",
+    8:"https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP.gm-ggpqx_rKf5bATCQaaqwHaEK%26pid%3DApi&f=1",
+    9:"https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP.HA8nFJvf0whUsksrEP-7bwHaDr%26pid%3DApi&f=1",
+    10:"https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.TZ9iyFN5FJFNhTDCE5tbkwHaFL%26pid%3DApi&f=1",
+}

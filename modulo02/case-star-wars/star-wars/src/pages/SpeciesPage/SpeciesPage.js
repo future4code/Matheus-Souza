@@ -1,7 +1,7 @@
 import { useContext,useEffect } from "react"
 import { charactersContext } from "../../contexts/GlobalState"
 import { ImgContainer, SpeciesPageContainer } from "./styles"
-import {speciesUrls} from "../../assets/imgUrls"
+import { speciesUrls} from "../../assets/imgUrls"
 
 
 export const SpeciesPage=()=>{
