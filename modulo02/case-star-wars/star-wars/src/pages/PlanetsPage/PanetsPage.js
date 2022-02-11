@@ -1,5 +1,7 @@
 import { useContext,useEffect } from "react"
 import { charactersContext } from "../../contexts/GlobalState"
+import { ImgContainer, PlanetsPageContainer } from "./styles"
+import {filmsUrls, planetsUrls} from "../../assets/imgUrls"
 
 
 export const PlanetsPage=()=>{
@@ -13,13 +15,23 @@ export const PlanetsPage=()=>{
 
   },[])
 
+  console.log(data)
 
   console.log(data&&data.map((i)=> i.name))
 
     return (
-        <div>
-             {data&&data.map((i)=> i.name)}
-            <h1>Planets Page</h1>
-        </div>
+      <PlanetsPageContainer>
+      {data && data.map((item, index) =>
+          <div>
+              <ImgContainer>
+              <img src={planetsUrls[index + 1]} />
+              </ImgContainer>
+              <li>
+                  {item.name}
+              </li>
+
+          </div>)}
+
+  </PlanetsPageContainer>
     )
 }
