@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom"
 import { BASE_URL } from "../../constants/urls"
 import { useRequestData } from "../../hooks/useRequestData"
 import { CardCharacterContainer, CharacterListPageContainer,} from "./styles"
-import { charactersUrls } from "../../assets/characters/characters"
+import { charactersUrls } from "../../assets/imgUrls"
 
 export const CharacterListPage = () => {
 
@@ -10,7 +10,7 @@ export const CharacterListPage = () => {
 
     const characters = useRequestData(`${BASE_URL}/people`, [])
 
-
+   
     return (
         <CharacterListPageContainer>
            

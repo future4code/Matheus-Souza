@@ -15,6 +15,7 @@ export const Header = ()=>{
                 <li>Vehicles</li>
                 <li>Species</li>
                 <li>Starships</li>
+                <li>Films</li>
         </HeaderContainer>
     )
 }

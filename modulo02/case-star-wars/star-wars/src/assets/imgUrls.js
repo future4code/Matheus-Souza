@@ -11,3 +11,12 @@ export const  charactersUrls =
     9:"https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.dTKMXyMZm3lmJ4TErXKgmwHaJ4%26pid%3DApi&f=1",
     10:"https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP.MW4yfR_jJONzvx3G6LLRUgAAAA%26pid%3DApi&f=1",
 }
+
+export const filmsUrls = {
+    1:"https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.RjRWRhJ6JrRgoTjXHP8LPQHaLA%26pid%3DApi&f=1",
+    2:"https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.9Tk3ZsPuhjFWpIXdG4ycxQHaLH%26pid%3DApi&f=1",
+    3:"https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.TsW5IQDpW-blW2WRxcS6LQHaLH%26pid%3DApi&f=1",
+    4:"https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.gYfelnE-PX_0kkRB8TIchgHaLH%26pid%3DApi&f=1",
+    5:"https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.poLAIFxNFRhwtiJe4WzTcAHaLH%26pid%3DApi&f=1",
+    6:"https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.0O_mZD5Jp65svA0v3HnjHwHaLH%26pid%3DApi&f=1"
+}
