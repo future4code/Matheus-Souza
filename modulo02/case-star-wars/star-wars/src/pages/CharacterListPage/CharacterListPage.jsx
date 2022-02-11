@@ -1,45 +1,39 @@
-import axios from "axios"
-import { useState } from "react"
-import { useEffect } from "react"
-import { useNavigate, useParams } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 import { BASE_URL } from "../../constants/urls"
-import { CharacterDetailPage } from "../CharacterDetailPage/CharacterDetailPage"
-import { CharacterListPageContainer } from "./styles"
+import { useRequestData } from "../../hooks/useRequestData"
+import { CardCharacterContainer, CharacterListPageContainer,} from "./styles"
+import { charactersUrls } from "../../assets/characters/characters"
 
+export const CharacterListPage = () => {
 
-export const CharacterListPage = ()=>{
+    const navigate = useNavigate()
 
-    const navigate= useNavigate()
+    const characters = useRequestData(`${BASE_URL}/people`, [])
 
-    const params = useParams()
-
-    console.log(params)
-
-    const [characters, setCharacter] = useState([])
-    console.log(characters)
-
-    useEffect(()=>{
-        axios
-        .get(`${BASE_URL}/people`)
-        .then(res => setCharacter(res.data.results))
-        .catch(err => console.log(err))
-        
-    },[])
 
     return (
         <CharacterListPageContainer>
-        <h1>Characters</h1>
-        <ul>
-        {characters.map((character,index) =>{
-            return (
-               
-                <CharacterDetailPage character = {character}/>
-                
-            )
-        })}
-        </ul>
-       
+           
+                {characters.results && characters.results.map(
+                    (character, index) => {
+                        return (
+
+                            <CardCharacterContainer
+                                key={index}
+                                onClick={() => { navigate(`/character/${index + 1}`) }}
+                            >
+                                <img src={charactersUrls[index + 1]}></img>
+                                {character.name}</CardCharacterContainer>
+
+                        )
+
+                    })
+                }
+          
         </CharacterListPageContainer>
     )
 
 }
+//suvida se é pra subir o estado até o router
+//para essa api em especifico peguei o "id" pelo index no array
+//eu ia fazer duas request no mesmo arquivo mas ai seria repetir código

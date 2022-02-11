@@ -1,12 +1,16 @@
-import { CharacterDetalPage } from "./pages/CharacterDetailPage/CharacterDetailPage";
-import { CharacterListPage } from "./pages/CharacterListPage/CharacterListPage";
 import { Routers } from "./Routes/Routes";
+import {Header} from "./components/header/Header"
+import { BrowserRouter } from "react-router-dom";
+
+//coloquei o BrowseRouter aqui para o Header ter acesso ao navigate
 
 function App() {
   return (
-    <div >
+    <BrowserRouter>
+
+      <Header/>
     <Routers/>
-    </div>
+    </BrowserRouter>
   );
 }
 
