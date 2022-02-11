@@ -19,7 +19,7 @@ li{
         background-image: url('${(props) => props.color}');
         background-repeat: no-repeat;
         background-position: center ;
-        background-size:60%;
+        background-size:140px;
   }
 }
 

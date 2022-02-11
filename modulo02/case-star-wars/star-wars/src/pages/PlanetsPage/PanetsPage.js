@@ -1,7 +1,7 @@
 import { useContext,useEffect } from "react"
 import { charactersContext } from "../../contexts/GlobalState"
 import { ImgContainer, PlanetsPageContainer } from "./styles"
-import {filmsUrls, planetsUrls} from "../../assets/imgUrls"
+import {planetsUrls} from "../../assets/imgUrls"
 
 
 export const PlanetsPage=()=>{
