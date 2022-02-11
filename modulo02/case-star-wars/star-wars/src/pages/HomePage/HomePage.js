@@ -1,7 +1,7 @@
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
 import { HomePageContainer } from "./styles"
-import { charactersUrls, filmsUrls, planetsUrls, vehicles } from "../../assets/imgUrls"
+import { charactersUrls, filmsUrls, planetsUrls, speciesUrls, vehicles } from "../../assets/imgUrls"
 
 
 export const HomePage = () => {
@@ -24,7 +24,7 @@ export const HomePage = () => {
                 onMouseOver={() => { setImg(vehicles[8]) }}>Vehicles</li>
             <li
                 onClick={() => { navigate("/species") }}
-                onMouseOver={() => { setImg(charactersUrls[4]) }}>Species</li>
+                onMouseOver={() => { setImg(speciesUrls[4]) }}>Species</li>
             <li
                 onClick={() => { navigate("/starships") }}
                 onMouseOver={() => { setImg(charactersUrls[5]) }}>Starships</li>

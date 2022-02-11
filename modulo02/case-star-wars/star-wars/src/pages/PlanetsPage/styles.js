@@ -12,7 +12,7 @@ export const ImgContainer = styled.div`
 width:100%;
 img{
     width:200px;
-    height:210px;
+    height:200px;
     border-radius:10px;
 }
 `
