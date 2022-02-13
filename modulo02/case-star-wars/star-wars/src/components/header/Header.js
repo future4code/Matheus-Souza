@@ -8,14 +8,14 @@ export const Header = ()=>{
 
     return (
         <HeaderContainer>
-          <h1>Star Wars</h1>
+          <h1  onClick={()=>{navigate("/")}}>Star Wars</h1>
                 <li onClick={()=>{navigate("/")}}>Home</li>
-                <li>Characters</li>
-                <li>Planets</li>
-                <li>Vehicles</li>
-                <li>Species</li>
-                <li>Starships</li>
-                <li>Films</li>
+                <li onClick={()=>{navigate("/characters")}}>Characters</li>
+                <li onClick={()=>{navigate("/planets")}}>Planets</li>
+                <li onClick={()=>{navigate("/vehicles")}}>Vehicles</li>
+                <li onClick={()=>{navigate("/species")}}>Species</li>
+                <li onClick={()=>{navigate("/starships")}}>Starships</li>
+                <li onClick={()=>{navigate("/films")}}>Films</li>
         </HeaderContainer>
     )
 }

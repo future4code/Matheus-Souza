@@ -1,17 +1,17 @@
 import { useContext,useEffect } from "react"
-import { charactersContext } from "../../contexts/GlobalState"
-import { ImgContainer, SpeciesPageContainer } from "./styles"
-import { speciesUrls} from "../../assets/imgUrls"
+import { charactersContext } from "../../../contexts/GlobalState"
+import { ImgContainer, VeiclesPageContainer } from "./styles"
+import {planetsUrls, vehiclesUrls} from "../../../assets/imgUrls"
 
 
-export const SpeciesPage=()=>{
+export const VehiclesPage=()=>{
 
 
    const {data, setData,getData} = useContext(charactersContext)
 
    
   useEffect(()=>{
-    getData("/species")
+    getData("/vehicles")
 
   },[])
 
@@ -20,11 +20,11 @@ export const SpeciesPage=()=>{
   console.log(data&&data.map((i)=> i.name))
 
     return (
-      <SpeciesPageContainer>
+      <VeiclesPageContainer>
       {data && data.map((item, index) =>
           <div>
               <ImgContainer>
-              <img src={speciesUrls[index + 1]} />
+              <img src={vehiclesUrls[index + 1]} />
               </ImgContainer>
               <li>
                   {item.name}
@@ -32,6 +32,6 @@ export const SpeciesPage=()=>{
 
           </div>)}
 
-  </SpeciesPageContainer>
+  </VeiclesPageContainer>
     )
 }

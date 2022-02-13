@@ -1,7 +1,7 @@
 import { useContext,useEffect } from "react"
-import { charactersContext } from "../../contexts/GlobalState"
+import { charactersContext } from "../../../contexts/GlobalState"
 import { ImgContainer, StarShipsPageContainer } from "./styles"
-import {speciesUrls, starshipsUrls} from "../../assets/imgUrls"
+import {starshipsUrls} from "../../../assets/imgUrls"
 
 
 export const StarShipPage=()=>{
@@ -15,9 +15,7 @@ export const StarShipPage=()=>{
 
   },[])
 
-  console.log(data)
 
-  console.log(data&&data.map((i)=> i.name))
 
     return (
       <StarShipsPageContainer>

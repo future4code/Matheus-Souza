@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from "react"
-import { charactersContext, } from "../../contexts/GlobalState"
-import { filmsUrls } from "../../assets/imgUrls"
+import { charactersContext, } from "../../../contexts/GlobalState"
+import { filmsUrls } from "../../../assets/imgUrls"
 import { FilmsPageContainer, ImgContainer } from "./styles"
 
 export const FilmsPage = () => {
