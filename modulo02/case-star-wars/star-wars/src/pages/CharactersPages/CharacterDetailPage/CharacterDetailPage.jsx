@@ -1,33 +1,17 @@
-import axios from "axios"
-import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 import { BASE_URL } from "../../../constants/urls"
 import { Container, Img, ImgCharacterContainer, DetailsContainer, AutomoveisContainer, MainContainer } from "./styles"
 import { charactersUrls, planetsUrls, starshipsUrls, vehiclesUrls } from "../../../assets/imgUrls"
+import {useRequestDataDetails } from "../../../hooks/useRequestData"
 
 export const CharacterDetailPage = () => {
 
-    const [homeWorl, setHomeWorld] = useState('')
-    const [characterDetail, setCharacterDetail] = useState([])
-    const [films, setFilms] = useState([])
-    const [starships, setStarships] = useState([])
-    const [vehicles, setVehicles] = useState([])
+    const {id} = useParams()
 
-    const params = useParams()
+    const getData = useRequestDataDetails(`${BASE_URL}/people/${id}`,[]) 
 
-    useEffect(() => {
-        axios
-            .get(`${BASE_URL}/people/${params.id}`)
-            .then((res) => {
-                setVehicles(res.data.vehicles)
-                setStarships(res.data.starships)
-                setFilms(res.data.films)
-                setCharacterDetail(res.data)
-                axios.get(res.data.homeworld)
-                    .then(res => setHomeWorld(res.data))
-            })
-            .catch(err => console.log(err))
-    }, [])
+    console.log('data',getData.data)
+    console.log('home',getData.home)
 
     const {
         name,
@@ -37,7 +21,7 @@ export const CharacterDetailPage = () => {
         gender,
         height,
         mass
-    } = characterDetail
+    } =getData.data
 
     return (
         <Container>
@@ -46,7 +30,7 @@ export const CharacterDetailPage = () => {
                 <DetailsContainer>
 
                     <ImgCharacterContainer>
-                        <Img src={charactersUrls[params.id]} />
+                        <Img src={charactersUrls[id]} />
                     </ImgCharacterContainer>
 
                     <ul>
