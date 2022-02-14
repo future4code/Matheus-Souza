@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom"
 import { BASE_URL } from "../../../constants/urls"
 import { Container, Img, ImgCharacterContainer, DetailsContainer, AutomoveisContainer, MainContainer } from "./styles"
-import { charactersUrls, planetsUrls, starshipsUrls, vehiclesUrls } from "../../../assets/imgUrls"
+import { charactersUrls, planetsUrls, starshipsUrls, vehiclesUrls ,urls} from "../../../assets/imgUrls"
 import {useRequestDataDetails } from "../../../hooks/useRequestData"
 
 export const CharacterDetailPage = () => {
@@ -19,6 +19,8 @@ export const CharacterDetailPage = () => {
         height,
         mass
     } =data.data
+
+   
 
     return (
         <Container>

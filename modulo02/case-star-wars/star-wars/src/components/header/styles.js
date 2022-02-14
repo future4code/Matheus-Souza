@@ -11,5 +11,9 @@ justify-content: space-evenly;
 li{
     margin:10px;
     list-style-type: none;
+    cursor:pointer;
+}
+h1{
+    cursor:pointer;
 }
 `

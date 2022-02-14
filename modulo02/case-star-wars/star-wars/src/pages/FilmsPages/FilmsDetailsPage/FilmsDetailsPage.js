@@ -3,7 +3,6 @@ import { useRequestDataDetails } from "../../../hooks/useRequestData"
 import { BASE_URL } from "../../../constants/urls"
 
 
-
 export const FilmsDetailsPage = () => {
 
     const { id } = useParams()

@@ -8,6 +8,7 @@ border-top:1px solid black;
 display:flex;
 
 li{
+  cursor:pointer;
     color:black;
     font-size:1.8rem;
     list-style-type: none;
@@ -21,6 +22,6 @@ li{
         background-position: center ;
         background-size:140px;
   }
-}
 
+}
 `
