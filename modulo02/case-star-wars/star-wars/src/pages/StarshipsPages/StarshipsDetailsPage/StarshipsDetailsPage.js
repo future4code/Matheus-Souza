@@ -2,29 +2,17 @@ import { useEffect, useState } from "react"
 import axios from "axios"
 import { useParams } from "react-router-dom"
 import { BASE_URL } from "../../../constants/urls"
+import { useRequestDataDetails } from "../../../hooks/useRequestData"
 
 
 
 export const StarshipsDetailsPage = () => {
 
-    const [data, setData] = useState([])
-    const [residents, setResidents] = useState([])
+    const {id} = useParams()
 
-    const params = useParams()
+    const data = useRequestDataDetails(`${BASE_URL}/starships/${id}`,[]) 
 
-    useEffect(() => {
-        axios
-            .get(`${BASE_URL}/starships/${params.id}`)
-            .then((res) => {
-                setResidents(res.data.residents)
-                setData(res.data)
-                /*   axios.get(res.data.homeworld)
-                     .then(res => )  */
-            })
-            .catch(err => console.log(err))
-    }, [])
-
-    console.log(" data", data)
+    console.log(data)
 
     const {
         name,
@@ -40,7 +28,7 @@ export const StarshipsDetailsPage = () => {
         manufacturer,
         max_atmosphering_speed,
         model, passengers
-    } = data
+    } = data.data
     return (
         <div>
             <ul>

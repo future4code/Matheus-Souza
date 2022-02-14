@@ -1,33 +1,13 @@
-import { useContext, useEffect } from "react"
-import { charactersContext } from "../../../contexts/GlobalState"
 import { ImgContainer, PlanetsPageContainer } from "./styles"
 import { planetsUrls } from "../../../assets/imgUrls"
-import { useState } from "react"
-import axios from "axios"
 import { BASE_URL } from "../../../constants/urls"
 import { useNavigate } from "react-router-dom"
-
+import { useRequestData } from "../../../hooks/useRequestData"
 
 
 export const PlanetsPage = () => {
 
-  const [data, setData] = useState([])
-
-  useEffect(() => {
-
-    const getData = async () => {
-
-      await axios
-        .get(`${BASE_URL}/planets`)
-        .then((response) => {
-          setData(response.data.results)
-        })
-
-    }
-    getData()
-      .catch(console.error);
-  }, [])
-
+  const data = useRequestData(`${BASE_URL}/people`, [])
 
   const navigate = useNavigate()
 
@@ -35,7 +15,7 @@ export const PlanetsPage = () => {
 
   return (
     <PlanetsPageContainer>
-      {data && data.map((item, index) =>
+      {data && data.results && data.results.map((item, index) =>
         <div key={index}>
           <ImgContainer>
             <img

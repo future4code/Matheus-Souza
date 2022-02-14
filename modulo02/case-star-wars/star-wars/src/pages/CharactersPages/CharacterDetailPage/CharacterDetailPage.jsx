@@ -8,10 +8,7 @@ export const CharacterDetailPage = () => {
 
     const {id} = useParams()
 
-    const getData = useRequestDataDetails(`${BASE_URL}/people/${id}`,[]) 
-
-    console.log('data',getData.data)
-    console.log('home',getData.home)
+    const data = useRequestDataDetails(`${BASE_URL}/people/${id}`,[]) 
 
     const {
         name,
@@ -21,7 +18,7 @@ export const CharacterDetailPage = () => {
         gender,
         height,
         mass
-    } =getData.data
+    } =data.data
 
     return (
         <Container>

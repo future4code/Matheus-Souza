@@ -1,29 +1,13 @@
-import { useEffect, useState } from "react"
-import axios from "axios"
 import { useParams } from "react-router-dom"
 import { BASE_URL } from "../../../constants/urls"
+import { useRequestDataDetails } from "../../../hooks/useRequestData"
 
 export const VehiclesDetailsPage = () => {
 
+    const {id} = useParams()
 
-    const [data, setData] = useState([])
-    const [residents, setResidents] = useState([])
+    const data = useRequestDataDetails(`${BASE_URL}/vehicles/${id}`,[]) 
 
-    const params = useParams()
-    console.log(params)
-
-    useEffect(() => {
-        axios
-            .get(`${BASE_URL}/vehicles/${params.id}`)
-            .then((res) => {
-                setData(res.data)
-                /*   axios.get(res.data.homeworld)
-                     .then(res => )  */
-            })
-            .catch(err => console.log(err))
-    }, [])
-
-    console.log(" data", data)
     const {
         cargo_capacity,
         name,
@@ -35,8 +19,7 @@ export const VehiclesDetailsPage = () => {
         model,
         passengers,
         pilots
-    } = data
-
+    } = data.data
 
     return (
         <div>
@@ -52,7 +35,7 @@ export const VehiclesDetailsPage = () => {
                 <li>Model:{model}</li>
                 <li>Passengers:{passengers}</li>
                 <li>Pilots:{pilots&&pilots.length}</li>
-            </ul>
+            </ul> 
         </div>
     )
 }
