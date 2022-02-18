@@ -10,7 +10,7 @@ export const useRequestData=(url,initialState)=>{
         axios
         .get(url)
         .then(res => setData(res.data))
-        .catch(err => console.log(data))
+        .catch(err => console.log(err))
 
     }, [])
 

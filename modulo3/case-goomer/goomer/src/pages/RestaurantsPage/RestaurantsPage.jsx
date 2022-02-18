@@ -1,20 +1,61 @@
-import { RestaurantCard } from "../../components/RestaurantCard/RestaurantCard"
-import { BASE_URL } from "../../constants/urls"
-import { useRequestData } from "../../hooks/useRequestData"
+import { RestaurantCard } from "../../components/RestaurantCard/RestaurantCard";
+import { useState } from "react";
+import { BASE_URL } from "../../constants/urls";
+import { useRequestData } from "../../hooks/useRequestData";
+import SearchIcon from "@mui/icons-material/Search";
+import {
+  Input,
+  InputContainer,
+  RestaurantPageContainer,
+  Title,
+  SearchIconContainer,
+  RestaurantsContainer,
+} from "./styles";
 
 
+export const RestaurantsPage = () => {
+  const [searchTerm, setSearchTerm] = useState("");
 
+  const restaurants = useRequestData(`${BASE_URL}/restaurants`, []);
 
-export const RestaurantsPage=()=>{
+  const onChangeSearchTerm = (e) => {
+    setSearchTerm(e.target.value);
+  };
 
-    const restaurants= useRequestData(`${BASE_URL}/restaurants`,[])
+  const filterRestaurants = (restaurant) => {
+    if (searchTerm === "") return true;
+    if (restaurant.name.includes(searchTerm)) return true;
+    return false;
+  };
 
-     console.log('restaurants',restaurants)
+  return (
+    <RestaurantPageContainer>
+      <div />
+      <Title>Bem-Vindo ao LabeRango</Title>
 
-    return (
-        <>
-       
-       {restaurants.map(restaurant => <RestaurantCard data={restaurant} key={restaurant.id}/>)}
-        </>
-    )
-}
+      <InputContainer>
+        <Input
+          placeholder="Buscar estabelcecimento"
+          value={searchTerm}
+          onChange={onChangeSearchTerm}
+        />
+        <SearchIconContainer>
+          <SearchIcon />
+        </SearchIconContainer>
+      </InputContainer>
+
+      <RestaurantsContainer>
+        {restaurants?.filter(filterRestaurants).map((res) => (
+          <RestaurantCard
+          img={res.image}
+            address={res.address}
+            name={res.name}
+            id={res.id}
+            key={res.id}
+          />
+        ))}
+      </RestaurantsContainer>
+
+    </RestaurantPageContainer>
+  );
+};
