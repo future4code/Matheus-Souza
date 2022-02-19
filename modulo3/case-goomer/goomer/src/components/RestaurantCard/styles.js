@@ -1,8 +1,9 @@
 import styled from "styled-components";
 
 export const RestauranCardContainer = styled.div`
-
-
+:hover {
+ cursor:pointer;
+}
 border:none;
 background: #FFFFFF 0% 0% no-repeat padding-box;
 box-shadow: 0px 2px 4px #00000029;

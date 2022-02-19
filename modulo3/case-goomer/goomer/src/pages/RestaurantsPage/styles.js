@@ -22,6 +22,11 @@ export const Input=styled.input`
     padding: 10px;
 `
 export const InputContainer=styled.div`
+
+@media screen and (max-width: 300px) {
+    font-size:5px;
+   
+}
   display: flex;
     justify-content: center;
     margin: 30px;
@@ -46,16 +51,13 @@ export const  RestaurantsContainer=styled.div`
 }
 @media screen and (max-width: 600px) {
     grid-template-columns:1fr;
-
-  
-  
+   
 }
 
 display:grid;
 align-self:center;
-margin:0px 5vw;
 grid-template-columns:repeat(3,1fr);
 grid-template-rows:repeat(2,1fr);
-column-gap:3.5vw;
+column-gap:2vw;
 row-gap:15px;
 `
