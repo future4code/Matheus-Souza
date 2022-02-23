@@ -1,0 +1,8 @@
+{
+    "editor.tabSize": 20,
+    "editor.autoIndent": "advanced",
+    "editor.fontFamily": " 'Fira Code' ",
+    "editor.fontLigatures": true,
+    "editor.cursorStyle": "line-thin",
+    "workbench.tree.indent": 25
+}

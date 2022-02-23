@@ -2,6 +2,11 @@ import styled from "styled-components"
 
 
 export const RestaurantPageContainer=styled.div`
+
+@media screen and (min-width: 380px) {
+    margin:20px;
+  
+}
 align-items:center;
 text-align:center;
 `
@@ -42,11 +47,9 @@ export const SearchIconContainer = styled.div`
 
 export const  RestaurantsContainer=styled.div`
 
-
 @media screen and (max-width: 948px) {
     grid-template-columns:repeat(2,1fr);
     column-gap:1rem;
-  
   
 }
 @media screen and (max-width: 600px) {
